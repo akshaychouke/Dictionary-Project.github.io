@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+:root {
+  --col1: #9cffd7;
+  --col2: #e0521a;
+}
+
+body {
+  background-color: var(--col1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 30px;
+  width: 70%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+.search-box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.search-box input {
+  width: 80%;
+  padding: 10px;
+  outline: none;
+  border: 3px solid var(--col1);
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.search-box button {
+  font-size: 20px;
+  font-weight: 600;
+  width: 15%;
+  border: none;
+  background-color: var(--col1);
+  cursor: pointer;
+}
+
+.result {
+  display: none;
+  position: relative;
+}
+.result .word {
+  display: flex;
+}
+
+.result h3 {
+  color: black;
+  font-size: 30px;
+}
+
+.result .word button {
+  background-color: transparent;
+  /* color: var(--col1); */
+  font-size: 30px;
+  height: 30px;
+  width: 40px;
+  border: none;
+  margin-left: 10px;
+}
+
+.result .details {
+  display: flex;
+  gap: 10px;
+  color: var(--col2);
+  font-size: 20px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.word-meaning {
+  color: black;
+  font-size: 20px;
+  border-left: 5px solid black;
+  padding-left: 10px;
+}
+.word-example span {
+  font-size: 20px;
+  color: var(--col2);
+}
+
+/*  to make it responsive  */
+@media screen and (max-width: 950px) {
+  .search-box input {
+    width: 75%;
+    font-size: 18px;
+  }
+  .search-box button {
+    font-size: 18px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .search-box input {
+      font-size: 16px;
+    }
+    .search-box button {
+      font-size: 15px;
+    }
+
+    @media screen and (max-width: 550px) {
+      .search-box input {
+        width: 65%;
+      }
+      .search-box button {
+        font-size: 16px;
+        width: 20%;
+      }
+      .result .word button {
+        font-size: 35px;
+        height: 40px;
+        width: 30px;
+      }
+      @media screen and (max-width: 413px) {
+        .search-box input {
+          width: 60%;
+        }
+        .search-box button {
+          font-size: 12px;
+          width: 20%;
+        }
+        @media screen and (max-width: 310px) {
+          .search-box button {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
