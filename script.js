@@ -1,12 +1,11 @@
-const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";   // link of an api
+const url = "https://api.dictionaryapi.dev/api/v2/entries/en/"; // link of an api
 const result = document.getElementById("result");
 const sound = document.getElementById("sound");
 const btn = document.getElementById("search-btn");
 
 btn.addEventListener("click", () => {
-//to get the value of user input into inputword variable
+  //to get the value of user input into inputword variable
   let inpWord = document.getElementById("input-word").value;
-
 
   //fetching the data from api
   fetch(`${url}${inpWord}`)
@@ -14,7 +13,7 @@ btn.addEventListener("click", () => {
     .then((data) => {
       result.style.display = "block";
 
-      // to store the data from api to variables 
+      // to store the data from api to variables
       let word = data[0].word;
       let partsofspeech = data[0].meanings[0].partOfSpeech;
       let phonetic = data[0].phonetics[0].text;
@@ -42,8 +41,12 @@ btn.addEventListener("click", () => {
             }
         </div>
         <div class="details">
-            <p>${partsofspeech ? partsofspeech : ""}</p>   <!-- to check if part of speech is available or not if not then will display nothing -->
-            <p>${phonetic ? phonetic : ""}</p>              <!-- to check if phonetic  is available or not if not then will display nothing -->
+            <p>${
+              partsofspeech ? partsofspeech : ""
+            }</p>   <!-- to check if part of speech is available or not if not then will display nothing -->
+            <p>${
+              phonetic ? phonetic : ""
+            }</p>              <!-- to check if phonetic  is available or not if not then will display nothing -->
         </div>
         <p class="word-meaning">
             ${definition ? definition : ""}
